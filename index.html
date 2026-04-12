@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Презентація практики</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: #1f3b5b;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    section {
+      background: white;
+      margin: 20px 0;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #1f3b5b;
+      font-size: 28px;
+    }
+
+    h3 {
+      color: #1f3b5b;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .team-card {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #1f3b5b;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin-top: 15px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Внутрішній сервіс транскрибації дзвінків</h1>
+      <p>Командний проєкт, виконаний під час проходження практики</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Опис проєкту</h2>
+      <p>
+        У межах проходження практики було розроблено внутрішній сервіс для запису та
+        транскрипції дзвінків у Google Meet. Система дає змогу записувати аудіо,
+        передавати його на сервер, виконувати автоматичну транскрипцію мовлення,
+        розділяти мовців та зберігати результати у Google Drive.
+      </p>
+    </section>
+
+    <section>
+      <h2>Мета роботи</h2>
+      <p>
+        Основною метою роботи було створення сервісу, який автоматизує обробку аудіо
+        з онлайн-зустрічей та дозволяє отримувати текстову транскрипцію розмови для
+        подальшого використання.
+      </p>
+    </section>
+
+    <section>
+      <h2>Використані технології</h2>
+      <ul>
+        <li><strong>JavaScript</strong> — для реалізації клієнтської частини у вигляді Chrome Extension.</li>
+        <li><strong>Node.js</strong> — для створення серверної частини та обробки HTTP-запитів.</li>
+        <li><strong>Python</strong> — для реалізації модуля транскрипції аудіо.</li>
+        <li><strong>Faster-Whisper</strong> — для автоматичного розпізнавання мовлення.</li>
+        <li><strong>pyannote.audio</strong> — для розділення мовців.</li>
+        <li><strong>Google APIs / OAuth 2.0</strong> — для авторизації та завантаження результатів у Google Drive.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Етапи виконання роботи</h2>
+      <ul>
+        <li>Аналіз поставленого завдання та формування структури системи.</li>
+        <li>Розробка клієнтської частини для запису аудіо з Google Meet.</li>
+        <li>Створення серверної частини для прийому та обробки аудіофайлів.</li>
+        <li>Інтеграція Faster-Whisper для транскрипції мовлення.</li>
+        <li>Інтеграція pyannote.audio для розділення мовців.</li>
+        <li>Налаштування збереження результатів у Google Drive.</li>
+        <li>Тестування повного циклу роботи системи.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Команда та внесок учасників</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <h3>Анастасія Будзак</h3>
+          <p><strong>Клієнтська частина</strong></p>
+          <p>
+            Відповідала за розробку Chrome Extension для запису аудіо під час роботи з
+            Google Meet, взаємодію з браузерними API та передачу аудіоданих на сервер.
+          </p>
+        </div>
+        <div class="team-card">
+          <h3>Віталій Павлюк</h3>
+          <p><strong>Серверна частина</strong></p>
+          <p>
+            Відповідав за реалізацію серверної логіки, прийом і обробку аудіофайлів,
+            транскрипцію, діаризацію мовців та завантаження результатів у Google Drive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Результат роботи</h2>
+      <p>
+        У результаті виконаної роботи створено систему, яка забезпечує запис аудіо,
+        автоматичну транскрипцію, розділення мовців та збереження отриманих матеріалів
+        у хмарному середовищі. Це дозволяє спростити подальшу роботу зі змістом дзвінків.
+      </p>
+    </section>
+
+    <section>
+      <h2>Відеоогляд проєкту</h2>
+      <p>Нижче можна розмістити відеодемонстрацію роботи системи.</p>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/wBCOgODPIr0"
+          title="Відеоогляд проєкту"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Сайт-презентація командного проєкту, виконаного під час проходження практики.
+  </footer>
+</body>
+</html>
 
